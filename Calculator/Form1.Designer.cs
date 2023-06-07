@@ -166,7 +166,7 @@
             buttonDot.Name = "buttonDot";
             buttonDot.Size = new Size(50, 46);
             buttonDot.TabIndex = 10;
-            buttonDot.Text = ".";
+            buttonDot.Text = ",";
             buttonDot.UseVisualStyleBackColor = true;
             buttonDot.Click += ButtonClickedDot;
             // 
@@ -236,7 +236,7 @@
             buttonEqual.TabIndex = 16;
             buttonEqual.Text = "=";
             buttonEqual.UseVisualStyleBackColor = true;
-            buttonEqual.Click += ButtonClickedOperations;
+            buttonEqual.Click += ButtonClickedEquals;
             // 
             // labelInputandRes
             // 
@@ -254,7 +254,7 @@
             // 
             labelHistory.AutoSize = true;
             labelHistory.BackColor = SystemColors.ButtonShadow;
-            labelHistory.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            labelHistory.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             labelHistory.Location = new Point(378, 24);
             labelHistory.MinimumSize = new Size(300, 310);
             labelHistory.Name = "labelHistory";
