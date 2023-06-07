@@ -3,11 +3,20 @@ namespace Calculator;
 public partial class Form1 : Form
 {
     private List<int> indexesOfOperations = new List<int>();
+
     private bool wasEqualsClicked = false;
+
+    string calcInfoPath = "calcInfo.txt";
 
     public Form1()
     {
         InitializeComponent();
+
+        try
+        {
+             labelHistory.Text = Log.ReadFromFileInfo(calcInfoPath);
+        }
+        catch{   }
     }
 
     private List<double> ConvertOperandsToDouble()
@@ -116,7 +125,14 @@ public partial class Form1 : Form
             labelInputandRes.Text += senderButton.Text;
             labelInputandRes.Text += result;
 
-            labelHistory.Text += $"{labelInputandRes.Text}\n";///////DOWITHLOQS
+            Log log = new Log(labelInputandRes.Text);
+            log.UploadLog(calcInfoPath);
+
+            try
+            {
+                labelHistory.Text = Log.ReadFromFileInfo(calcInfoPath);
+            }
+            catch { }
 
             indexesOfOperations.Clear();
             wasEqualsClicked = true;
