@@ -55,23 +55,40 @@ public partial class Form1 : Form
             operations.Add(equation[i]);
         }
 
+        for (int i = 0; i < operations.Count; i++)
+        {
+            if (operations[i] == '*' || operations[i] == '/')
+            {
+                double tmp = operands[i];
+
+                switch (operations[i])
+                {
+                    case '*':
+                        tmp *= operands[i + 1];
+                        break;
+                    case '/':
+                        tmp /= operands[i + 1];
+                        break;
+                }
+                operands.RemoveAt(i);
+                operands.RemoveAt(i);
+                operands.Insert(i, tmp);
+                operations.RemoveAt(i);
+                i--;
+            }
+        }
+
         double res = operands[0];
 
-        for(int i = 1; i < operands.Count; i++)
+        for (int i = 1; i < operands.Count; i++)
         {
-            switch(operations[i - 1])
+            switch (operations[i - 1])
             {
                 case '+':
                     res += operands[i];
                     break;
                 case '-':
                     res -= operands[i];
-                    break;
-                case '*':
-                    res *= operands[i];
-                    break;
-                case '/':
-                    res /= operands[i];
                     break;
             }
         }
