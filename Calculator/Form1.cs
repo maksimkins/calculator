@@ -150,6 +150,12 @@ public partial class Form1 : Form
     {
         if (sender is Button senderButton)
         {
+            if (wasEqualsClicked)
+            {
+                ButtonClickedDeleteButton(sender, e);
+                wasEqualsClicked = false;
+            }
+
             if (string.IsNullOrEmpty(labelInputandRes.Text) || string.IsNullOrWhiteSpace(labelInputandRes.Text))
                 return;
 
@@ -167,6 +173,12 @@ public partial class Form1 : Form
     {
         if (sender is Button senderButton)
         {
+            if (wasEqualsClicked)
+            {
+                ButtonClickedDeleteButton(sender, e);
+                wasEqualsClicked = false;
+            }
+
             if (string.IsNullOrEmpty(labelInputandRes.Text) || string.IsNullOrWhiteSpace(labelInputandRes.Text))
                 return;
 
