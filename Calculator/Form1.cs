@@ -75,9 +75,9 @@ public partial class Form1 : Form
                     case '*':
                         tmp *= operands[i + 1];
                         break;
-                    case '/':
+                    case '/':                                              
                         tmp /= operands[i + 1];
-                        break;
+                      break;
                 }
                 operands.RemoveAt(i);
                 operands.RemoveAt(i);
